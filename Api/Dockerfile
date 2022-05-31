@@ -15,8 +15,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine as build
 WORKDIR /app
 COPY . .
-RUN dotnet restore ./Api/Api.sln
-RUN dotnet publish -o /app/published-app ./Api/Api.sln
+RUN dotnet restore ./Api.sln
+RUN dotnet publish -o /app/published-app ./Api.sln
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine as runtime
 WORKDIR /app
